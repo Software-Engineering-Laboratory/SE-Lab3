@@ -1,4 +1,4 @@
-public class Rectangle {
+public class Rectangle implements AreaComputable {
     private int width;
     private int height;
 
@@ -13,7 +13,28 @@ public class Rectangle {
         this.height = height;
     }
 
+    @Override
     public int computeArea(){
         return width * height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        if (width <= 0)
+        	throw new IllegalArgumentException("Width should be positive!");
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        if (height <= 0)
+        	throw new IllegalArgumentException("Height should be positive!");
+        this.height = height;
     }
 }
